@@ -34,5 +34,6 @@ A full-stack **MERN** application for managing user profiles. This project follo
 
 ---
 
-## Project Structure
+
+
 
