@@ -1,5 +1,5 @@
-import React , { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React , { useState,useEffect  } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import asset11 from '../assets/asset11.png'; // Adjust path as needed
 import asset1 from '../assets/asset1@4.png'; // Adjust path as needed
 import asset2 from '../assets/asset2@4.png'; // Adjust path as needed
@@ -38,7 +38,30 @@ const Header = () => {
 const ProfilePage = () => {
    const [showEmail, setShowEmail] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
+  const [profile, setProfile] = useState({ name: '', age: '', pronoun: '' });
+
   const navigate = useNavigate();
+   const { id } = useParams();
+   useEffect(() => {
+  console.log("Profile ID from URL:", id); // Debug id
+
+  if (!id) {
+    console.warn("No ID found in route params!");
+    return;
+  }
+
+  fetch(`http://localhost:3333/profile/${id}`) // replace with your backend URL
+    .then(res => {
+      console.log("Fetch response status:", res.status); // Debug response status
+      return res.json();
+    })
+    .then(data => {
+      console.log("Data received from backend:", data); // Debug backend data
+      setProfile(data); // Or setProfile(data.data) if your API wraps the object
+    })
+    .catch(err => console.error("Error fetching profile:", err));
+}, [id]);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -104,13 +127,13 @@ const ProfilePage = () => {
         <h1
           className="text-center text-3xl md:text-4xl font-bold text-[#333333] mt-4 md:mt-6"
         >
-          Saksham Arora
+            Saksham Arora
         </h1>
 
         <p
           className="text-center text-xl md:text-2xl font-medium text-[#666666] mt-2"
         >
-          Male | 25 | He/Him
+         Male | 25 | He/Him
         </p>
    <a
   href="https://www.youtube.com/"

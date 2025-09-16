@@ -34,6 +34,7 @@ app.get('/users/checkemail', usersCltr.checkEmail)
 
 app.post('/profile',profilesCltr.createProfile)
 app.get('/profiles',  profilesCltr.getProfiles)
+app.get("/profile/:id", profilesCltr.getProfileById)
 
 
 
