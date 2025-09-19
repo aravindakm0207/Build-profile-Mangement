@@ -19,7 +19,7 @@ configureDB()
 app.use(express.json())
 
 app.use(cors({
-    origin: 'https://build-profile-mangement-2pi3.vercel.app/', 
+    origin: 'https://build-profile-mangement-2pi3.vercel.app', 
     credentials: true
 }));
 
