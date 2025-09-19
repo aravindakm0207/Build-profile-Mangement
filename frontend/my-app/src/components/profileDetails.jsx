@@ -7,6 +7,7 @@ import assetA from '../assets/assetA.png'; // New asset for CBRE Case Study
 import assetB from '../assets/assetB.jpg';   // New asset for Aditya Birla Minacs Case Study
 import assetC from '../assets/assetC.png'; // New asset for Findev Case Study
 import assetD  from '../assets/assetD.png'; // New asset for below Visual Resume
+import API_BASE_URL from '../config'
 
 import a from '../assets/a.png'; // Adjust path as needed
 import b from '../assets/b.png'; // Adjust path as needed
@@ -50,7 +51,7 @@ const ProfilePage = () => {
     return;
   }
 
-  fetch(`http://localhost:3333/profile/${id}`) // replace with your backend URL
+  fetch(`${API_BASE_URL}/profile/${id}`) // replace with your backend URL
     .then(res => {
       console.log("Fetch response status:", res.status); // Debug response status
       return res.json();
