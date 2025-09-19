@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import asset11 from "../assets/asset11.png";
 import asset1 from "../assets/asset1@4.png";
 import asset2 from "../assets/asset2@4.png";
-import arora from "../assets/arora.png"; // fallback image
+import arora from "../assets/arora.png"; 
 import API_BASE_URL from '../config'
 
 const Header = () => (
