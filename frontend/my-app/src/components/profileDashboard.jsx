@@ -4,6 +4,7 @@ import asset11 from "../assets/asset11.png";
 import asset1 from "../assets/asset1@4.png";
 import asset2 from "../assets/asset2@4.png";
 import arora from "../assets/arora.png"; // fallback image
+import API_BASE_URL from '../config'
 
 const Header = () => (
   <div className="w-full h-[68px] bg-gray-200 flex items-center justify-between px-4 md:px-8 border-b border-gray-300">
@@ -52,7 +53,7 @@ const ProfileDashboard = () => {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const res = await fetch("http://localhost:3333/profiles");
+        const res = await fetch(`${API_BASE_URL}/profiles`);
         const data = await res.json();
         setCards(data); // backend should return array of profiles
       } catch (error) {
