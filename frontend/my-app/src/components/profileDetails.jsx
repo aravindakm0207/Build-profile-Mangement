@@ -1,20 +1,20 @@
 import React , { useState,useEffect  } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import asset11 from '../assets/asset11.png'; // Adjust path as needed
-import asset1 from '../assets/asset1@4.png'; // Adjust path as needed
-import asset2 from '../assets/asset2@4.png'; // Adjust path as needed
-import assetA from '../assets/assetA.png'; // New asset for CBRE Case Study
-import assetB from '../assets/assetB.jpg';   // New asset for Aditya Birla Minacs Case Study
-import assetC from '../assets/assetC.png'; // New asset for Findev Case Study
-import assetD  from '../assets/assetD.png'; // New asset for below Visual Resume
+import asset11 from '../assets/asset11.png';
+import asset1 from '../assets/asset1@4.png'; 
+import asset2 from '../assets/asset2@4.png'; 
+import assetA from '../assets/assetA.png'; 
+import assetB from '../assets/assetB.jpg';   
+import assetC from '../assets/assetC.png'; 
+import assetD  from '../assets/assetD.png'; 
 import API_BASE_URL from '../config'
 
-import a from '../assets/a.png'; // Adjust path as needed
-import b from '../assets/b.png'; // Adjust path as needed
-import c  from '../assets/c.png'; // Adjust path as needed
-import d  from '../assets/d.png'; // New asset for CBRE Case Study
-import e from '../assets/e.png';   // New asset for Aditya Birla Minacs Case Study
-import f from '../assets/f.png'; // New asset for Findev Case Study
+import a from '../assets/a.png'; 
+import b from '../assets/b.png'; 
+import c  from '../assets/c.png';
+import d  from '../assets/d.png'; 
+import e from '../assets/e.png';   
+import f from '../assets/f.png'; 
 import g  from '../assets/g.png';
 import h  from '../assets/h.png';
 import arora  from '../assets/arora.png';
@@ -44,20 +44,20 @@ const ProfilePage = () => {
   const navigate = useNavigate();
    const { id } = useParams();
    useEffect(() => {
-  console.log("Profile ID from URL:", id); // Debug id
+  console.log("Profile ID from URL:", id); 
 
   if (!id) {
     console.warn("No ID found in route params!");
     return;
   }
 
-  fetch(`${API_BASE_URL}/profile/${id}`) // replace with your backend URL
+  fetch(`${API_BASE_URL}/profile/${id}`) 
     .then(res => {
-      console.log("Fetch response status:", res.status); // Debug response status
+      console.log("Fetch response status:", res.status); 
       return res.json();
     })
     .then(data => {
-      console.log("Data received from backend:", data); // Debug backend data
+      console.log("Data received from backend:", data); 
       setProfile(data); // Or setProfile(data.data) if your API wraps the object
     })
     .catch(err => console.error("Error fetching profile:", err));
