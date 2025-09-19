@@ -8,7 +8,7 @@ const storage = new CloudinaryStorage({
   params: {
     folder: 'uploads', // Replace 'uploads' with your desired Cloudinary folder
     format: async (req, file) => 'jpg', // Specify format (optional)
-    public_id: (req, file) => `${Date.now()}-${file.originalname.split('.')[0]}`, // Unique public ID
+    public_id: (req, file) => `${Date.now()}-${file.originalname.split('.')[0]}`, 
   },
 });
 
